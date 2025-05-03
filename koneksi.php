@@ -2,7 +2,7 @@
 $host = "db";        // bukan localhost
 $user = "user";
 $pass = "password";
-$db   = "simplecrm";
+$db   = "dbinputpelanggan";
 
 $conn = mysqli_connect($host, $user, $pass, $db);
 
