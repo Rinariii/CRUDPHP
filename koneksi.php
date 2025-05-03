@@ -1,7 +1,7 @@
 <?php
-$host = "localhost";
-$user = "root"; // Ganti jika di hosting
-$pass = "";     // Ganti jika di hosting
+$host = "db";        // bukan localhost
+$user = "user";
+$pass = "password";
 $db   = "simplecrm";
 
 $conn = mysqli_connect($host, $user, $pass, $db);
