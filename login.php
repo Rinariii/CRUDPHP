@@ -9,7 +9,7 @@ $conn = mysqli_connect($host, $user, $pass, $db);
 
 if (!$conn) {
     die("Koneksi gagal: " . mysqli_connect_error());
-}}
+}
 
 if (isset($_POST['login'])) {
     $username = $_POST['username'];
