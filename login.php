@@ -1,14 +1,15 @@
 <?php
 session_start();
-$host = 'localhost:3307';
-$user = 'root';
-$pass = '';
-$db = 'login';
+$host = "db";        // bukan localhost
+$user = "user";
+$pass = "password";
+$db   = "login";
 
-$koneksi = new mysqli($host, $user, $pass, $db);
-if ($koneksi->connect_error) {
-    die("Koneksi gagal: " . $koneksi->connect_error);
-}
+$conn = mysqli_connect($host, $user, $pass, $db);
+
+if (!$conn) {
+    die("Koneksi gagal: " . mysqli_connect_error());
+}}
 
 if (isset($_POST['login'])) {
     $username = $_POST['username'];
