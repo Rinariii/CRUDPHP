@@ -8,24 +8,7 @@ if (!isset($_SESSION['username'])) {
 // Check if user is admin
 $username = $_SESSION['username'];
 $isAdmin = ($username === 'admin');
-define('ENVIRONMENT', 'development');
-if (ENVIRONMENT === 'development') {
-    $host = 'localhost:3307';
-    $user = 'root';
-    $pass = '';
-    $name = 'dbinputpelanggan';
-} else {
-    $host = 'your_host';
-    $user = 'your_username';
-    $pass = 'your_password';
-    $name = 'your_database';
-}
-$koneksi = new mysqli($host, $user, $pass, $name);
-
-if ($koneksi->connect_error) {
-    die('Koneksi gagal: ' . $koneksi->connect_error);
-}
-
+require_once 'koneksi.php';
 if (isset($_POST["bsimpan"])) {
   if (!$isAdmin) {
       die("<script>alert('Akses ditolak! Hanya admin yang dapat melakukan operasi ini.');document.location='index.php';</script>");
